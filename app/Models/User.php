@@ -19,9 +19,12 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
+        'team_id',
         'name',
         'email',
         'password',
+        'phone',
+        'role'
     ];
 
     /**
@@ -43,4 +46,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }

@@ -8,4 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Room extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'team_id',
+        'name',
+        'width',
+        'height'
+    ];
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
+
+    public function storageSpaces()
+    {
+        return $this->hasMany(StorageSpace::class);
+    }
 }
