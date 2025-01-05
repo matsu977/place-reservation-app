@@ -16,11 +16,6 @@ class Room extends Model
         'height'
     ];
 
-    public function team()
-    {
-        return $this->belongsTo(Team::class);
-    }
-
     public function storageSpaces()
     {
         return $this->hasMany(StorageSpace::class);

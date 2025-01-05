@@ -8,45 +8,40 @@ use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
-    public function index()
-    {
-        $rooms = Room::where('team_id', auth()->user()->team_id)
-            ->with('storageSpaces')
-            ->paginate(10);
-
-        return view('admin.rooms.index', compact('rooms'));
-    }
+    
 
     public function create()
     {
-        return view('admin.rooms.create');
+        return view('rooms.create');
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'team_id' => 'required|integer',
             'name' => 'required|string|max:255',
-            'width' => 'required|integer|min:1',
-            'height' => 'required|integer|min:1',
+            'width' => 'required|integer',
+            'height' => 'required|integer',
+            'storageSpaces' => 'required|array',
+            'storageSpaces.*.number' => 'required|string|max:50',
+            'storageSpaces.*.x' => 'required|integer',
+            'storageSpaces.*.y' => 'required|integer',
         ]);
 
-        $room = new Room($validated);
-        $room->team_id = auth()->user()->team_id;
-        $room->save();
+        // 部屋を作成
+        $room = Room::create([
+            'team_id' => $validated['team_id'],
+            'name' => $validated['name'],
+            'width' => $validated['width'],
+            'height' => $validated['height'],
+        ]);
 
-        return redirect()->route('admin.rooms.index')
-            ->with('success', '部屋を登録しました。');
-    }
-
-    public function show(Room $room)
-    {
-        // チーム所属確認
-        if ($room->team_id !== auth()->user()->team_id) {
-            abort(403);
+        // 荷物置き場を作成
+        foreach ($validated['storageSpaces'] as $space) {
+            $room->storageSpaces()->create($space);
         }
 
-        return view('admin.rooms.show', compact('room'));
+        return response()->json(['message' => 'Room and storage spaces saved successfully.']);
     }
 
-    // 他のメソッド（edit, update, destroy）も同様に実装
 }

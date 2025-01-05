@@ -6,7 +6,7 @@ import StorageSpaceEditor from "./components/StorageSpaceEditor";
 function App() {
     return (
         <>
-            <h1>Hello World</h1>
+            
             <StorageSpaceEditor />
         </>
     );
