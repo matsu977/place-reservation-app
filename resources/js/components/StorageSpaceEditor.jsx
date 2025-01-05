@@ -177,7 +177,6 @@ const StorageSpaceEditor = () => {
       }
 
       alert('保存が完了しました');
-    ß
 
       window.location.href = `/laravel-react-app-02/public/dashboard`;
 
