@@ -50,13 +50,17 @@
                             ログイン状態を保持する
                         </label>
                     </div>
+                </div>
+
+                <div class="flex justify-between mt-4">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+                        会員登録
+                    </a>
 
                     @if (Route::has('password.request'))
-                        <div class="text-sm">
-                            <a href="{{ route('password.request') }}" class="font-medium text-blue-600 hover:text-blue-500">
-                                パスワードを忘れた方
-                            </a>
-                        </div>
+                        <a href="{{ route('password.request') }}" class="font-medium text-blue-600 hover:text-blue-500 text-sm">
+                            パスワードを忘れた方
+                        </a>
                     @endif
                 </div>
 
