@@ -21,8 +21,12 @@ use App\Models\Room;
 */
 
 
-
 Route::middleware(['auth'])->group(function () { 
+    Route::get('/', function () { 
+        $rooms = Room::with('storageSpaces')->get(); 
+        return view('dashboard', compact('rooms')); 
+    })->name('home');
+
     Route::get('/dashboard', function () { 
         $rooms = Room::with('storageSpaces')->get(); 
         return view('dashboard', compact('rooms')); 
