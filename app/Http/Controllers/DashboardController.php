@@ -12,6 +12,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard');
+        // ログインユーザーのteam_idに基づいて部屋を取得
+        $rooms = Room::where('team_id', auth()->user()->team_id)
+                    ->with('storageSpaces') // N+1問題を避けるためにEagerロード
+                    ->get();
+
+        return view('dashboard', compact('rooms'));
     }
 }

@@ -20,4 +20,9 @@ class Room extends Model
     {
         return $this->hasMany(StorageSpace::class);
     }
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
 }

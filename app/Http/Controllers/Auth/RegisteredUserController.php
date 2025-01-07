@@ -46,6 +46,19 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        // デフォルト
+        /*
         return redirect(RouteServiceProvider::HOME);
-    }
+        */
+
+        /* メール確認が必要な場合は verification.notice へリダイレクト
+        チーム選択画面へリダイレクトさせるために、まずはメール確認画面へリダイレクトさせる
+        */
+
+        if ($user->hasVerifiedEmail()) {
+            return redirect()->route('team.select');
+        }
+
+        return redirect()->route('verification.notice');
+    }   
 }

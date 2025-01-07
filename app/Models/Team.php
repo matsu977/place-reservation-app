@@ -9,7 +9,15 @@ class Team extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'name',
+        'password',
+        'team_code'
+    ];
+
+    protected $hidden = [
+        'password',  // APIレスポンスなどでパスワードが公開されないように
+    ];
 
     public function users()
     {
