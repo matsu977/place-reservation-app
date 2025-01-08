@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-light bg-light">
         <div class="container">
-            <a href= class="navbar-brand">バンチカンリ</a>
+            <a href="{{ route('dashboard') }}" class="">バンチカンリ</a>
 
             <ul class="navbar-nav">
                 <li class="nav-item">
