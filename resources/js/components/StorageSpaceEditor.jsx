@@ -148,7 +148,7 @@ const StorageSpaceEditor = () => {
       const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
       console.log('CSRF Token:', csrfToken);
 
-      const response = await fetch('/laravel-react-app-02/public/api/rooms', {
+      const response = await fetch('/api/rooms', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
