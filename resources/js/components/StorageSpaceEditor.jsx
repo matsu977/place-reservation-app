@@ -196,10 +196,15 @@ const StorageSpaceEditor = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl mb-4">部屋のレイアウト設定</h1>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">部屋のレイアウト設定</h1>
+        <a href="/dashboard" className="text-blue-500 hover:text-blue-700">
+          ← 部屋一覧に戻る
+        </a>
+      </div>
       
       <div className="mb-4">
-        <label className="block text-sm mb-1">部屋名:</label>
+        <label className="block text-sm mb-1 font-bold">部屋名:</label>
         <input
           type="text"
           value={roomName}
@@ -218,7 +223,7 @@ const StorageSpaceEditor = () => {
       <div className="mb-4 space-y-2">
         <div className="flex gap-4 items-center">
           <div>
-            <label className="block text-sm">部屋の幅 (m):</label>
+            <label className="block text-sm font-bold">部屋の幅 (m):</label>
             <input
               type="number"
               value={gridSize.width}
@@ -227,7 +232,7 @@ const StorageSpaceEditor = () => {
             />
           </div>
           <div>
-            <label className="block text-sm">奥行き (m):</label>
+            <label className="block text-sm font-bold">奥行き (m):</label>
             <input
               type="number"
               value={gridSize.height}

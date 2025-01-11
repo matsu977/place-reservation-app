@@ -3,13 +3,10 @@
 @section('content')
 <div class="container mx-auto px-4">
     <div class="mb-4 flex items-center justify-between">
-        <h1 class="text-2xl">{{ $room->name }} - 荷物置き場予約</h1>
+        <h1 class="text-2xl font-bold">{{ $room->name }} - 荷物置き場予約</h1>
         <a href="{{ route('dashboard') }}" 
            class="text-blue-500 hover:text-blue-600 flex items-center">
-            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-            </svg>
-            部屋一覧に戻る
+           ← 部屋一覧に戻る
         </a>
     </div>
 
@@ -55,7 +52,6 @@
                     >   
                     <div class="p-2">
                         <p class="text-sm">{{ $space['number'] }}</p>
-                        <p class="text-xs">{{ $space['width'] }}m × {{ $space['height'] }}m</p>
                         @if($space['hasActiveReservation'])
                             <form action="{{ route('reservations.cancel', $space['id']) }}" method="POST" class="inline">
                                 @csrf

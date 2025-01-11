@@ -3,12 +3,13 @@ import "../css/app.css";
 
 import ReactDOM from "react-dom/client";
 import StorageSpaceEditor from "./components/StorageSpaceEditor";
+import { Layout } from "./components/Layout";
+
 function App() {
     return (
-        <>
-            
+        <Layout>
             <StorageSpaceEditor />
-        </>
+        </Layout>
     );
 
 }
