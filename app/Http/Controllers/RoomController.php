@@ -77,5 +77,15 @@ class RoomController extends Controller
         return response()->json(['message' => 'エラーが発生しました：' . $e->getMessage()], 500);
     }
 }
-    
+
+    public function destroy(Room $room)
+    {
+        try {
+            $room->delete();
+            return redirect()->route('dashboard')->with('success', '部屋を削除しました');
+        } catch (\Exception $e) {
+            return redirect()->route('dashboard')->with('error', '部屋の削除に失敗しました');
+        }
+    }
+        
 }

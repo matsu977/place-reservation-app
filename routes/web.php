@@ -22,8 +22,8 @@ use App\Http\Controllers\TeamController;
 */
 
 Route::middleware(['auth'])->group(function () {
+    Route::redirect('/', '/dashboard');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 
@@ -60,6 +60,9 @@ Route::middleware(['auth'])->group(function () {
     */
 });
 
+Route::delete('/rooms/{room}', [RoomController::class, 'destroy'])
+    ->name('rooms.destroy')
+    ->middleware(['auth', 'team_leader']);  // team_leaderミドルウェアで制限
 
 
 require __DIR__.'/auth.php';

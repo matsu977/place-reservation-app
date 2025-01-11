@@ -69,5 +69,6 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         // 既存のミドルウェア定義...
         'role' => \App\Http\Middleware\CheckRole::class,
+        'team_leader' => \App\Http\Middleware\TeamLeaderMiddleware::class,
     ];
 }
