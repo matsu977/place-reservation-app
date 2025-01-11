@@ -72,6 +72,15 @@
                             ログイン
                         </button>
                     </form>
+
+                    <!-- Test User Info -->
+                    <div class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <h3 class="text-sm font-medium text-red-600 mb-2">テストユーザー情報</h3>
+                        <div class="space-y-2 text-sm text-red-600">
+                            <p><span class="font-medium">メールアドレス:</span> leader@test.com</p>
+                            <p><span class="font-medium">パスワード:</span> password</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
