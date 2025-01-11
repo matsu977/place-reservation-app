@@ -64,5 +64,9 @@ Route::delete('/rooms/{room}', [RoomController::class, 'destroy'])
     ->name('rooms.destroy')
     ->middleware(['auth', 'team_leader']);  // team_leaderミドルウェアで制限
 
+Route::get('/guide', function () {
+    return view('guide');
+})->name('guide');
+
 
 require __DIR__.'/auth.php';
