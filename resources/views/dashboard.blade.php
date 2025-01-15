@@ -51,16 +51,9 @@
                             <div class="flex items-center text-gray-600">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                          d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z" />
-                                </svg>
-                                <span>{{ $room->width }}m × {{ $room->height }}m</span>
-                            </div>
-                            <div class="flex items-center text-gray-600">
-                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                                           d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
                                 </svg>
-                                <span>荷物置き場: {{ $room->storageSpaces->count() }}個</span>
+                                <span>予約: {{ $room->storageSpaces->sum(fn($space) => $space->activeReservations->count()) }} / {{ $room->storageSpaces->count() }}</span>
                             </div>
                         </div>
 

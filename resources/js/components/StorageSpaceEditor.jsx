@@ -223,7 +223,7 @@ const StorageSpaceEditor = () => {
       <div className="mb-4 space-y-2">
         <div className="flex gap-4 items-center">
           <div>
-            <label className="block text-sm font-bold">部屋の幅 (m):</label>
+            <label className="block text-sm font-bold">部屋の幅 (マス):</label>
             <input
               type="number"
               value={gridSize.width}
@@ -232,7 +232,7 @@ const StorageSpaceEditor = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-bold">奥行き (m):</label>
+            <label className="block text-sm font-bold">奥行き (マス):</label>
             <input
               type="number"
               value={gridSize.height}
@@ -304,9 +304,7 @@ const StorageSpaceEditor = () => {
                 }}
               >
                 <div className="text-xs p-1">
-                  {space.number || '番号未設定'}
-                  <br />
-                  {space.width}m × {space.height}m
+                  {space.number || '番号'}
                 </div>
               </div>
             ))}
@@ -340,7 +338,7 @@ const StorageSpaceEditor = () => {
                 />
               </div>
               <div>
-                <p className="text-sm">サイズ: {selectedSpace.width}m × {selectedSpace.height}m</p>
+                <p className="text-sm">サイズ: {selectedSpace.width}マス × {selectedSpace.height}マス</p>
               </div>
               <div className="flex gap-2">
                 <button

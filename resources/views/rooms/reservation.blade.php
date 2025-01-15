@@ -22,18 +22,16 @@
         </div>
     @endif
 
-    <div class="relative border rounded overflow-auto">
-        <div style="width: {{ $room->width * 40 }}px; height: {{ $room->height * 40 }}px;">
+    <div class="inline-block border rounded">
+        <div class="relative" style="width: {{ $room->width * 40 }}px; height: {{ $room->height * 40 }}px;">
             <!-- グリッド線 -->
-            <div class="absolute inset-0" style="
-                display: grid;
-                grid-template-columns: repeat({{ $room->width }}, 40px);
-                grid-template-rows: repeat({{ $room->height }}, 40px);
-            ">
-                @for ($i = 0; $i < ($room->width * $room->height); $i++)
-                    <div class="border border-gray-100"></div>
+            @for ($y = 0; $y < $room->height; $y++)
+                @for ($x = 0; $x < $room->width; $x++)
+                    <div class="absolute border border-gray-100"
+                         style="left: {{ $x * 40 }}px; top: {{ $y * 40 }}px; width: 40px; height: 40px;">
+                    </div>
                 @endfor
-            </div>
+            @endfor
 
             <!-- 荷物置き場 -->
             @foreach($storageSpaces as $space)
@@ -58,13 +56,13 @@
                                 <button type="submit" 
                                         class="text-xs bg-red-500 text-white px-2 py-1 rounded"
                                         onclick="return confirm('予約をキャンセルしてもよろしいですか？')">
-                                    予約キャンセル
+                                    満
                                 </button>
                             </form>
                         @else
                             <button onclick="openReservationModal({{ $space['id'] }}, '{{ $space['number'] }}')" 
                                     class="text-xs bg-blue-500 text-white px-2 py-1 rounded">
-                                予約する
+                                空
                             </button>
                         @endif
                     </div>

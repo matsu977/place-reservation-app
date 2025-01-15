@@ -14,9 +14,9 @@ class DashboardController extends Controller
     {
         // ログインユーザーのteam_idに基づいて部屋を取得
         $rooms = Room::where('team_id', auth()->user()->team_id)
-                    ->with('storageSpaces') // N+1問題を避けるためにEagerロード
+                    ->with(['storageSpaces', 'storageSpaces.activeReservations']) // Eagerロード
                     ->get();
 
         return view('dashboard', compact('rooms'));
     }
-}
+}   
