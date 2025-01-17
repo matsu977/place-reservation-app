@@ -21,24 +21,33 @@ use App\Http\Controllers\TeamController;
 |
 */
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
+    // ダッシュボード
     Route::redirect('/', '/dashboard');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-});
 
+    // 部屋作成
+    Route::get('/rooms/create', [RoomController::class, 'create'])->name('rooms.create');
 
-Route::middleware(['auth'])->group(function () { 
-
+    // 部屋予約
     Route::get('/rooms/{room}/reservation', [ReservationController::class, 'showReservation'])
         ->name('rooms.reservation');
     Route::post('/reservations', [ReservationController::class, 'reserve'])
     ->name('reservations.store');
     Route::post('/storage-spaces/{storageSpace}/cancel', [ReservationController::class, 'cancel'])
         ->name('reservations.cancel');
+
+    // 使い方
+    Route::get('/guide', function () {return view('guide');})->name('guide');
+
+    // マイページ
+    Route::get('/mypage', function () {return view('mypage');})->name('mypage');
+
+    // チーム情報
+    Route::get('/team/show', [TeamController::class, 'show'])->name('team.show');
 });
 
-Route::get('/rooms/create', [RoomController::class, 'create'])->middleware(['auth', 'verified'])->name('rooms.create');
- 
+
 // チーム関連
 Route::middleware(['auth'])->group(function () {
     // チーム未所属ユーザー向けルート
@@ -64,9 +73,7 @@ Route::delete('/rooms/{room}', [RoomController::class, 'destroy'])
     ->name('rooms.destroy')
     ->middleware(['auth', 'team_leader']);  // team_leaderミドルウェアで制限
 
-Route::get('/guide', function () {
-    return view('guide');
-})->name('guide');
+
 
 
 require __DIR__.'/auth.php';

@@ -36,7 +36,7 @@ class TeamController extends Controller
 
         $team = Team::create([
             'name' => $validated['name'],
-            'password' => Hash::make($validated['password']),
+            'password' => $validated['password'],
             'team_code' => $this->generateTeamCode(),
         ]);
 
@@ -58,7 +58,7 @@ class TeamController extends Controller
 
         $team = Team::where('team_code', $validated['team_code'])->first();
 
-        if (!$team || !Hash::check($validated['password'], $team->password)) {
+        if (!$team || $validated['password'] !== $team->password) {
             return back()
                 ->withErrors(['team_code' => 'チームコードまたはパスワードが正しくありません'])
                 ->withInput();
@@ -93,14 +93,9 @@ class TeamController extends Controller
     public function show()
     {
         $team = auth()->user()->team;
+        $isTeamLeader = auth()->user()->role === 'team_leader';
         
-        if (!$team) {
-            return redirect()
-                ->route('team.select')
-                ->with('warning', 'チームに所属していません');
-        }
-
-        return view('team.show', compact('team'));
+        return view('team.show', compact('team', 'isTeamLeader'));
     }
 
     // チームからの離脱処理（オプション）

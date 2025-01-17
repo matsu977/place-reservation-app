@@ -17,26 +17,13 @@
         <div class="guide-section mb-5">
             <div class="bg-white rounded shadow">
                 <div class="p-6">
-                    <div class="guide-text mb-3">
-                        貸出・返却を行う際は、まずバーコードスキャナーで番号を読み取ります。
-                        手動での入力も可能です。
+                    <div class="guide-text mb-3 text-lg">
+                        ①「＋新しい部屋を登録」をクリック
                     </div>
-                    <div class="guide-image">
-                        <img src="{{ asset('images/guide/step1.png') }}" alt="バーコードスキャンの説明" class="rounded">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="guide-section mb-5">
-            <div class="bg-white rounded shadow">
-                <div class="p-6">
-                    <div class="guide-text mb-3">
-                        貸出・返却履歴は一覧画面で確認できます。
-                        検索機能を使って特定の履歴を素早く見つけることができます。
-                    </div>
-                    <div class="guide-image">
-                        <img src="{{ asset('images/guide/step2.png') }}" alt="履歴確認画面" class="rounded">
+                    <div class="guide-image flex justify-center">
+                        <img src="{{ asset('images/guide/step1.png') }}" 
+                             alt="バーコードスキャンの説明" 
+                             class="rounded w-full max-w-4xl object-contain h-96">
                     </div>
                 </div>
             </div>
@@ -45,12 +32,103 @@
         <div class="guide-section mb-5">
             <div class="bg-white rounded shadow">
                 <div class="p-6">
-                    <div class="guide-text mb-3">
-                        バンチの管理画面では、新規登録や情報の編集が可能です。
-                        在庫状況も一目で確認できます。
+                    <div class="guide-text mb-3 text-lg">
+                        ②部屋名、部屋の幅、奥行きを入力
                     </div>
-                    <div class="guide-image">
-                        <img src="{{ asset('images/guide/step3.png') }}" alt="管理画面の説明" class="rounded">
+                    <div class="guide-image flex justify-center">
+                        <img src="{{ asset('images/guide/step2.png') }}" 
+                             alt="履歴確認画面" 
+                             class="rounded w-full max-w-4xl object-contain h-96">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section mb-5">
+            <div class="bg-white rounded shadow">
+                <div class="p-6">
+                    <div class="guide-text mb-3 text-lg">
+                        ③「荷物置き場を追加」をクリックし、荷物置き場を設置
+                    </div>
+                    <div class="guide-image flex justify-center">
+                        <img src="{{ asset('images/guide/step3.png') }}" 
+                             alt="管理画面の説明" 
+                             class="rounded w-full max-w-4xl object-contain h-96">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section mb-5">
+            <div class="bg-white rounded shadow">
+                <div class="p-6">
+                    <div class="guide-text mb-3 text-lg">
+                        ④荷物置き場の番号を設定、「保存」をクリック
+                    </div>
+                    <div class="guide-image flex justify-center">
+                        <img src="{{ asset('images/guide/step4.png') }}" 
+                             alt="バーコードスキャンの説明" 
+                                class="rounded w-full max-w-4xl object-contain h-96">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section mb-5">
+            <div class="bg-white rounded shadow">
+                <div class="p-6">
+                    <div class="guide-text mb-3 text-lg">
+                        ⑤「予約画面を開く」をクリック
+                    </div>
+                    <div class="guide-image flex justify-center">
+                        <img src="{{ asset('images/guide/step5.png') }}" 
+                             alt="バーコードスキャンの説明" 
+                                class="rounded w-full max-w-4xl object-contain h-96">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section mb-5">
+            <div class="bg-white rounded shadow">
+                <div class="p-6">
+                    <div class="guide-text mb-3 text-lg">
+                        ⑥予約したい場所をクリック
+                    </div>
+                    <div class="guide-image flex justify-center">
+                        <img src="{{ asset('images/guide/step6.png') }}" 
+                             alt="バーコードスキャンの説明" 
+                                class="rounded w-full max-w-4xl object-contain h-96">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section mb-5">
+            <div class="bg-white rounded shadow">
+                <div class="p-6">
+                    <div class="guide-text mb-3 text-lg">
+                        ⑦予約したい場所をクリック
+                    </div>
+                    <div class="guide-image flex justify-center">
+                        <img src="{{ asset('images/guide/step7.png') }}" 
+                             alt="バーコードスキャンの説明" 
+                             class="rounded w-full max-w-4xl object-contain h-96">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section mb-5">
+            <div class="bg-white rounded shadow">
+                <div class="p-6">
+                    <div class="guide-text mb-3 text-lg">
+                        ⑧予約完了！
+                    </div>
+                    <div class="guide-image flex justify-center">
+                        <img src="{{ asset('images/guide/step8.png') }}" 
+                             alt="バーコードスキャンの説明" 
+                             class="rounded w-full max-w-4xl object-contain h-96">
                     </div>
                 </div>
             </div>

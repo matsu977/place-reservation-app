@@ -22,10 +22,10 @@
                         <i class="bi bi-book me-1"></i>
                         使い方
                     </a>
-                    <a class="nav-link px-3 text-gray-600 hover:text-gray-900" href="#" 
-                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="bi bi-box-arrow-right me-1"></i>
-                        ログアウト
+                    <!-- マイページ 　-->
+                    <a class="nav-link px-3 text-gray-600 hover:text-gray-900" href="{{ route('mypage') }}">
+                        <i class="bi bi-person me-1"></i>
+                        マイページ
                     </a>
                 </div>
             </div>
