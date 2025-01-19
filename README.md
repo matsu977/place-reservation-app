@@ -7,7 +7,7 @@
 https://laravel-react-app-67d46ca95f12.herokuapp.com/
 
 ## 使用技術
-フロントエンド：React　　
+フロントエンド：React  
 バックエンド：Laravel
 
 ## 機能一覧
