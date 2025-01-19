@@ -7,8 +7,8 @@
 https://laravel-react-app-67d46ca95f12.herokuapp.com/
 
 ## 使用技術
-フロントエンドフレームワーク：React
-バックエンドフレームワーク：Laravel
+フロントエンド：React
+バックエンド：Laravel
 
 ## 機能一覧
 ・ユーザー登録、ログイン機能（laravel/breeze）
