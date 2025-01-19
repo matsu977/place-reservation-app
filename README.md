@@ -15,7 +15,8 @@ https://laravel-react-app-67d46ca95f12.herokuapp.com/
 ・部屋作成機能  
 ・予約機能  
 ・チーム作成機能  
-<img src="https://github.com/user-attachments/assets/52406491-0429-4389-9829-7f58d5918f29" width="800" align="center">  
+<img src="https://github.com/user-attachments/assets/52406491-0429-4389-9829-7f58d5918f29" width="800" align="center">
+  
 <img src="https://github.com/user-attachments/assets/4fa67b86-0c6b-4a6e-a469-8ba209753386" width="800" align="center">  
 
 
