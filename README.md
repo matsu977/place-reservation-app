@@ -13,8 +13,10 @@ https://laravel-react-app-67d46ca95f12.herokuapp.com/
 ## 機能一覧
 ・ユーザー登録、ログイン機能（laravel/breeze）  
 ・部屋作成機能  
-<img src="https://github.com/user-attachments/assets/3d7b2b38-b4c3-4483-ba59-cf1411c7324b" width="400" align="center">
+<img src="https://github.com/user-attachments/assets/52406491-0429-4389-9829-7f58d5918f29" width="400" align="center">  
+  
 ・予約機能  
+<img src="https://github.com/user-attachments/assets/4fa67b86-0c6b-4a6e-a469-8ba209753386" width="400" align="center">  
 ・チーム作成機能  
 
 
