@@ -11,9 +11,9 @@ https://laravel-react-app-67d46ca95f12.herokuapp.com/
 バックエンド：Laravel
 
 ## 機能一覧
-・ユーザー登録、ログイン機能（laravel/breeze）　　
-・部屋作成機能　　
-・予約機能　　
-・チーム作成機能　　
+・ユーザー登録、ログイン機能（laravel/breeze）  
+・部屋作成機能  
+・予約機能  
+・チーム作成機能  
 
 
