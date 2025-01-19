@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'チーム選択')
+@section('title', '')
 
 @section('content')
 <div class="py-12">

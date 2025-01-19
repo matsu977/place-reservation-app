@@ -15,7 +15,7 @@ return new class extends Migration
             // チームIDはteamsテーブルが必要なので、一時的にnullableにしておきます
             $table->foreignId('team_id')->nullable()->after('id');
             $table->string('phone', 20)->nullable()->after('password');
-            $table->enum('role', ['team_leader', 'member'])->after('phone');
+            $table->enum('role', ['team_leader', 'member', 'unassigned'])->default('unassigned')->after('phone');
         });
     }
 

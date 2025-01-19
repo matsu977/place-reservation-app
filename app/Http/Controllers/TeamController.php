@@ -40,8 +40,11 @@ class TeamController extends Controller
             'team_code' => $this->generateTeamCode(),
         ]);
 
-        // 作成者をチームに所属させる
-        auth()->user()->update(['team_id' => $team->id]);
+        // 作成者をチームに所属させ、team_leaderロールを付与
+        auth()->user()->update([
+            'team_id' => $team->id,
+            'role' => 'team_leader'
+        ]);
 
         return redirect()
             ->route('dashboard')
@@ -64,7 +67,11 @@ class TeamController extends Controller
                 ->withInput();
         }
 
-        auth()->user()->update(['team_id' => $team->id]);
+        // ユーザーをチームに所属させ、memberロールを付与
+        auth()->user()->update([
+            'team_id' => $team->id,
+            'role' => 'member'
+        ]);
 
         return redirect()
             ->route('dashboard')

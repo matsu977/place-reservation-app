@@ -15,8 +15,30 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next, ...$roles): Response
     {
-        if (!$request->user() || !in_array($request->user()->role, $roles)) {
-            abort(403, '権限がありません。');
+        if (!auth()->check()) {
+            return redirect('login');
+        }
+
+        $userRole = auth()->user()->role;
+
+        // unassignedユーザーは、特定のteamルートのみアクセス可能
+        if ($userRole === 'unassigned') {
+            $allowedRoutes = [
+                'team.select',
+                'team.create',
+                'team.store',
+                'team.join',
+                'team.join.process'
+            ];
+
+            if (!in_array($request->route()->getName(), $allowedRoutes)) {
+                return redirect()->route('team.select');
+            }
+        }
+
+        // 指定されたロールのいずれかを持っているかチェック
+        if (!in_array($userRole, $roles)) {
+            return redirect()->route('team.select');
         }
 
         return $next($request);

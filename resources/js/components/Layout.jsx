@@ -26,11 +26,10 @@ const Header = () => {
               使い方
             </a>
             <a 
-              href="#" 
-              onClick={handleLogout}
+              href="/mypage" 
               className="px-3 text-gray-600 hover:text-gray-900"
             >
-              ログアウト
+              マイページ
             </a>
           </div>
         </div>
