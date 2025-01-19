@@ -35,6 +35,20 @@ class CheckRole
                 return redirect()->route('team.select');
             }
         }
+        // team_leaderとmemberは、特定のteamルートにアクセス不可
+        elseif (in_array($userRole, ['team_leader', 'member'])) {
+            $restrictedRoutes = [
+                'team.select',
+                'team.create',
+                'team.store',
+                'team.join',
+                'team.join.process'
+            ];
+
+            if (in_array($request->route()->getName(), $restrictedRoutes)) {
+                return redirect()->route('dashboard');
+            }
+        }
 
         // 指定されたロールのいずれかを持っているかチェック
         if (!in_array($userRole, $roles)) {
