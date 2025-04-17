@@ -6,8 +6,6 @@
 ## URL
 https://laravel-react-app-67d46ca95f12.herokuapp.com/
 
-## 紹介スライド
-https://docs.google.com/presentation/d/1a4eUk3cakGV7nPQ_8I0pwLn2XpS37J5UIrYhbE2d0gQ/edit#slide=id.p　　
 
 ## 使用技術
 フロントエンド：React  
